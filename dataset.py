@@ -140,6 +140,7 @@ class DataSet:
         return list(map(itemgetter(1), self.video_label_encoded))
 
     def get_X_y(self, frame_count):
+        random.shuffle(self.video_label_encoded)
         X, y = [], []
         for example in self.video_label_encoded:
             video, label = self.__prepare_example(example, frame_count)
@@ -168,6 +169,7 @@ class DataSet:
 
     def get_batch_generator(self, batch_size, frame_count):
         while(True):
+            random.shuffle(self.video_label_encoded)
             for batch_i in range(0, len(self.video_label_encoded), batch_size):
                 X, y = [], []
                 for example in self.video_label_encoded[batch_i:batch_i + batch_size]:
