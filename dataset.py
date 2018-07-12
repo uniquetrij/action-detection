@@ -167,6 +167,7 @@ class DataSet:
 
 
     def get_batch_generator(self, batch_size, frame_count):
+        while(True):
             for batch_i in range(0, len(self.video_label_encoded), batch_size):
                 X, y = [], []
                 for example in self.video_label_encoded[batch_i:batch_i + batch_size]:
