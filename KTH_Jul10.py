@@ -237,7 +237,7 @@ def evaluate_model(g_test, test_steps, model_name):
     print("Loaded model from disk")
     loaded_model.compile(loss='categorical_crossentropy', optimizer='adam')
 
-    return loaded_model.evaluate_generator(self, g_test, steps=test_steps, max_queue_size=10, workers=1, use_multiprocessing=False, verbose=0)
+    return loaded_model.evaluate_generator( g_test, steps=test_steps, max_queue_size=10, workers=1, use_multiprocessing=False, verbose=0)
 
 
 def run(data_path, file_exts, class_count, batch_size, width, height, frame_count, split_per, epochs):
