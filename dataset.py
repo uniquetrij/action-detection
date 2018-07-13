@@ -128,10 +128,30 @@ class DataSet:
 
         capture = cv2.VideoCapture(video_label_encoded[0][0])
         ret, frame = capture.read()
+        print("Frame Shape",frame.shape)
         self.size = len(self.video_label_encoded)
-        self.width = frame.shape[1]
         self.height = frame.shape[0]
+        self.width = frame.shape[1]
         self.channels = frame.shape[2]
+
+
+    def preprocess(self, frame_count, resize_width=None, resize_height=None, to_gray=False):
+        frame = inspect.currentframe()
+        args, _, _, values = inspect.getargvalues(frame)
+        for key, value in [(i, values[i]) for i in args]:
+            setattr(self, key, value)
+
+        if resize_width is None:
+            self.resize_width = self.width
+        if resize_height == None:
+            self.resize_height = self.height
+        if to_gray:
+            self.resize_channels = 1
+        else:
+            self.resize_channels = self.channels
+
+
+
 
     def get_paths(self):
         return list(map(itemgetter(0), self.video_label_encoded))
@@ -143,20 +163,22 @@ class DataSet:
         random.shuffle(self.video_label_encoded)
         X, y = [], []
         for example in self.video_label_encoded:
-            video, label = self.__prepare_example(example, frame_count)
+            video, label = self.__prepare_example(example)
             X.append(video)
             y.append(label)
         return np.array(X), np.array(y)
 
-    def __prepare_example(self, example, frame_count):
+    def __prepare_example(self, example):
         frames = []
         capture = cv2.VideoCapture(example[0])
-        for k in range(frame_count):
+        for k in range(self.frame_count):
             ret, frame = capture.read()
-            # frame = cv2.resize(frame, (height, width), interpolation=cv2.INTER_AREA)
-            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            gray = np.array(gray)[:, :, np.newaxis]
-            frames.append(gray)
+
+            frame = cv2.resize(frame, (self.resize_width, self.resize_height), interpolation=cv2.INTER_AREA)
+            if self.to_gray:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                frame = np.array(frame)[:, :, np.newaxis]
+            frames.append(frame)
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
@@ -167,14 +189,17 @@ class DataSet:
         return video, label
 
 
-    def get_batch_generator(self, batch_size, frame_count):
+    def get_batch_generator(self, batch_size):
         while(True):
             random.shuffle(self.video_label_encoded)
             for batch_i in range(0, len(self.video_label_encoded), batch_size):
                 X, y = [], []
                 for example in self.video_label_encoded[batch_i:batch_i + batch_size]:
-                    video, label = self.__prepare_example(example, frame_count)
+                    video, label = self.__prepare_example(example)
                     X.append(video)
                     y.append(label)
 
                 yield np.array(X), np.array(y)
+
+    def get_shape(self):
+        return (self.frame_count, self.resize_width, self.resize_height, self.resize_channels)

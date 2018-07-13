@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ce4db2f-bc4b-47dd-9065-2d0ce6bbc4d0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/dataset/model_trainer.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i3d_inception.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,10 +19,22 @@
       <file leaf-file-name="dataset.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="155" column="86" lean-forward="true" selection-start-line="155" selection-start-column="86" selection-end-line="155" selection-end-column="86" />
+            <state relative-caret-position="-9">
+              <caret line="176" column="76" selection-start-line="176" selection-start-column="76" selection-end-line="176" selection-end-column="76" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="i3d_inception.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/i3d_inception.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-18">
+              <caret line="254" column="44" selection-start-line="254" selection-start-column="41" selection-end-line="254" selection-end-column="44" />
+              <folding>
+                <element signature="e#236#273#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -29,8 +43,17 @@
       <file leaf-file-name="KTH_Jul10.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KTH_Jul10.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="-9">
               <caret line="199" selection-start-line="200" selection-start-column="24" selection-end-line="201" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.ipynb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="5" />
             </state>
           </provider>
         </entry>
@@ -38,26 +61,17 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="-9">
               <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model_trainer.ipynb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model_trainer.ipynb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataset/model_trainer.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="5" />
+              <selected id="3" />
             </state>
           </provider>
         </entry>
@@ -67,8 +81,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -78,6 +92,8 @@
       <find>path</find>
       <find>video_file</find>
       <find>width</find>
+      <find>resize</find>
+      <find>input_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -89,15 +105,17 @@
         <option value="$PROJECT_DIR$/dataset/test.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/KTH_Jul10.py" />
-        <option value="$PROJECT_DIR$/test.ipynb" />
-        <option value="$PROJECT_DIR$/dataset.py" />
         <option value="$PROJECT_DIR$/dataset/model_trainer.ipynb" />
+        <option value="$PROJECT_DIR$/i3d_keras.py" />
+        <option value="$PROJECT_DIR$/dataset.py" />
+        <option value="$PROJECT_DIR$/test.ipynb" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="582" />
     <option name="y" value="28" />
-    <option name="width" value="960" />
+    <option name="width" value="1338" />
     <option name="height" value="1018" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -128,7 +146,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/uniquetrij/PycharmProjects/action-detection/dataset.py" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../kinetics-i3d" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -226,13 +244,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="28" width="960" height="1018" extended-state="4" />
+    <frame x="0" y="28" width="1920" height="1018" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22083333" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.114583336" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32963374" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37846836" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3779264" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -451,36 +469,46 @@
     <entry file="file://$PROJECT_DIR$/dataset/video_label.pkl" />
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="-9">
           <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KTH_Jul10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="199" selection-start-line="200" selection-start-column="24" selection-end-line="201" />
+    <entry file="file://$PROJECT_DIR$/dataset/model_trainer.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="155" column="86" lean-forward="true" selection-start-line="155" selection-start-column="86" selection-end-line="155" selection-end-column="86" />
+        <state relative-caret-position="-9">
+          <caret line="176" column="76" selection-start-line="176" selection-start-column="76" selection-end-line="176" selection-end-column="76" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="6" />
+    <entry file="file://$PROJECT_DIR$/i3d_inception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="254" column="44" selection-start-line="254" selection-start-column="41" selection-end-line="254" selection-end-column="44" />
+          <folding>
+            <element signature="e#236#273#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/model_trainer.ipynb">
+    <entry file="file://$PROJECT_DIR$/KTH_Jul10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="199" selection-start-line="200" selection-start-column="24" selection-end-line="201" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="5" />
