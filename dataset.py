@@ -128,14 +128,12 @@ class DataSet:
 
         capture = cv2.VideoCapture(video_label_encoded[0][0])
         ret, frame = capture.read()
-        print("Frame Shape",frame.shape)
         self.size = len(self.video_label_encoded)
         self.height = frame.shape[0]
         self.width = frame.shape[1]
         self.channels = frame.shape[2]
 
-
-    def preprocess(self, frame_count, resize_width=None, resize_height=None, to_gray=False):
+    def set_attributes(self, frame_count=10, resize_width=None, resize_height=None, to_gray=False):
         frame = inspect.currentframe()
         args, _, _, values = inspect.getargvalues(frame)
         for key, value in [(i, values[i]) for i in args]:
@@ -150,16 +148,13 @@ class DataSet:
         else:
             self.resize_channels = self.channels
 
-
-
-
     def get_paths(self):
         return list(map(itemgetter(0), self.video_label_encoded))
 
     def get_labels(self):
         return list(map(itemgetter(1), self.video_label_encoded))
 
-    def get_X_y(self, frame_count):
+    def get_X_y(self):
         random.shuffle(self.video_label_encoded)
         X, y = [], []
         for example in self.video_label_encoded:
