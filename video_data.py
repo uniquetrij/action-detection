@@ -101,7 +101,7 @@ class ExamplesSet:
             params = pickle.load(f)
         return  ExamplesSet(params["examples_list"], params["class_labels_dict"])
 
-    def split(self, split_fractions, ):
+    def split(self, split_fractions):
         start_index = 0
         splits = []
 
@@ -185,6 +185,9 @@ class DataSet:
 
     def get_shape(self):
         return (self.frame_count, self.resize_width, self.resize_height, self.resize_channels)
+
+    def get_class_count(self):
+        return len(self.examples_set.class_labels_dict)
 
 if __name__ == '__main__':
     ExamplesListing.from_path("dataset", [".avi"], pickle_path="PathLabelListing.pkl")
