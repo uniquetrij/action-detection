@@ -155,8 +155,10 @@ class DataSet:
         capture = cv2.VideoCapture(example[0])
         for k in range(self.frame_count):
             ret, frame = capture.read()
-
-            frame = cv2.resize(frame, (self.resize_width, self.resize_height), interpolation=cv2.INTER_AREA)
+            try:
+                frame = cv2.resize(frame, (self.resize_width, self.resize_height), interpolation=cv2.INTER_AREA)
+            except:
+                print(example[0])
             if self.to_gray:
                 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 frame = np.array(frame)[:, :, np.newaxis]
